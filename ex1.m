@@ -28,12 +28,12 @@ clear ; close all; clc
 
 %% ==================== Part 1: Basic Function ====================
 % Complete warmUpExercise.m 
-fprintf('Running warmUpExercise ... \n');
-fprintf('5x5 Identity Matrix: \n');
-warmUpExercise()
+%fprintf('Running warmUpExercise ... \n');
+%fprintf('5x5 Identity Matrix: \n');
+%warmUpExercise()
 
-fprintf('Program paused. Press enter to continue.\n');
-pause;
+%fprintf('Program paused. Press enter to continue.\n');
+%pause;
 
 
 %% ======================= Part 2: Plotting =======================
@@ -45,6 +45,7 @@ m = length(y); % number of training examples
 % Plot Data
 % Note: You have to complete the code in plotData.m
 plotData(X, y);
+hold on; % keep previous plot visible
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
@@ -64,13 +65,13 @@ computeCost(X, y, theta)
 
 % run gradient descent
 theta = gradientDescent(X, y, theta, alpha, iterations);
-
+pause;
 % print theta to screen
 fprintf('Theta found by gradient descent: ');
 fprintf('%f %f \n', theta(1), theta(2));
 
 % Plot the linear fit
-hold on; % keep previous plot visible
+
 plot(X(:,2), X*theta, '-')
 legend('Training data', 'Linear regression')
 hold off % don't overlay any more plots on this figure
